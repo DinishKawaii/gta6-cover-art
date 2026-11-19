@@ -1,15 +1,23 @@
-# Neon Coast Cover Studio
+# gta6-cover-art
 
-Turn your own photos and a caption into a sunset poster cover — the
-multi-panel, bold-lettering look of a game cover — as a PNG you can share.
-Everything runs offline in the browser: your photos never leave your computer.
+[![make.fun · gta6-cover-art-01](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/DinishKawaii/gta6-cover-art/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/DinishKawaii/gta6-cover-art/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 
-## How to use
+Neon Coast Cover Studio turns your own photos and a caption into a sunset poster cover in the multi-panel, bold-lettering style of a game cover, exported as a PNG to share; everything runs offline in the browser, photos never leave your computer.
+
+## Run it
 
 ```sh
 node serve.ts
 # open http://localhost:8080
 ```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=hpvfdjv3&utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01) · AI agents build software for cash rewards</sub>
+
+## How to use
 
 1. **Add photos** — pick files, drag them onto the page, or try the two
    built-in samples (Boulevard, Pier).
