@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Cover Studio — make your own sunset cover</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <header>
+      <h1>Neon Coast <span>Cover Studio</span></h1>
+      <p class="tag">Your photo, a sunset grade, a poster cover — in about a minute. Everything runs offline in this page; your photos never leave your computer.</p>
+    </header>
+
+    <section class="group">
+      <h2>1 · Photos</h2>
+      <label class="file-btn">Add your photos…
+        <input id="photo" type="file" accept="image/*" multiple>
+      </label>
+      <p class="hint">Or drop image files anywhere on this page. Click a photo below to put it in the selected panel.</p>
+      <div id="photoList" class="chips"></div>
+      <div class="row">
+        <button id="sampleBoulevard" type="button" class="ghost">Try Boulevard</button>
+        <button id="samplePier" type="button" class="ghost">Try Pier</button>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>2 · Layout</h2>
+      <div id="layouts" class="chips"></div>
+      <h2 class="sub">Panels — click one, then drag it on the cover</h2>
+      <div id="panels" class="chips"></div>
+      <div class="panel-box">
+        <p>Panel photo: <strong id="panelPhoto">—</strong></p>
+        <label>Zoom <span id="zoomVal">100%</span>
+          <input id="zoom" type="range" min="1" max="3" step="0.05" value="1">
+        </label>
+        <label>Move left / right <input id="offX" type="range" min="-0.6" max="0.6" step="0.01" value="0"></label>
+        <label>Move up / down <input id="offY" type="range" min="-0.6" max="0.6" step="0.01" value="0"></label>
+        <div class="row">
+          <button id="resetPanel" type="button" class="ghost">Reset panel</button>
+          <button id="fillAll" type="button" class="ghost">Use in all panels</button>
+        </div>
+        <p class="hint">Tip: drag the photo on the cover to move it, scroll over it to zoom.</p>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>3 · Colour grade</h2>
+      <div id="grades" class="chips"></div>
+    </section>
+
+    <section class="group">
+      <h2>4 · Words</h2>
+      <label>Main title <input id="title" type="text" maxlength="40" value="Sunset Heist"></label>
+      <label>Script line <input id="subtitle" type="text" maxlength="30" value="Neon Coast"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="40" value="A launch-week story"></label>
+      <div id="titleStyles" class="chips"></div>
+      <div class="row checks">
+        <label class="check"><input id="frame" type="checkbox" checked> Panel frames</label>
+        <label class="check"><input id="grain" type="checkbox" checked> Film grain</label>
+        <label class="check"><input id="vignette" type="checkbox" checked> Vignette</label>
+        <label class="check"><input id="badge" type="checkbox" checked> Badge ribbon</label>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>5 · One-click looks</h2>
+      <div class="row">
+        <button type="button" class="ghost" data-preset='{"layout":"hero","grade":"sunset","titleStyle":"sunset"}'>Golden Getaway</button>
+        <button type="button" class="ghost" data-preset='{"layout":"tilted","grade":"neon","titleStyle":"neon"}'>Neon Night</button>
+        <button type="button" class="ghost" data-preset='{"layout":"grid","grade":"noir","titleStyle":"white"}'>Noir Grid</button>
+        <button id="surprise" type="button" class="ghost">🎲 Surprise me</button>
+      </div>
+      <div class="row">
+        <button id="undo" type="button" class="ghost" disabled>↩ Undo</button>
+        <button id="redo" type="button" class="ghost" disabled>↪ Redo</button>
+      </div>
+    </section>
+
+    <section class="group export">
+      <h2>6 · Export PNG</h2>
+      <div class="row">
+        <button id="exportSquare" type="button" class="primary">Square 1080×1080</button>
+        <button id="exportPortrait" type="button" class="primary">Story 1080×1350</button>
+      </div>
+      <div class="row">
+        <button id="exportWide" type="button" class="primary">Wide 1920×1080</button>
+        <button id="exportAll" type="button" class="primary all">Export all 3 ↓</button>
+      </div>
+      <p id="status" role="status">Two sample photos are loaded — pick a layout and export.</p>
+    </section>
+
+    <footer>
+      <p>Original art made with your own photos. Fonts: Anton &amp; Pacifico (SIL Open Font License, see app/fonts/). No logos, artwork or fonts from any game.</p>
+    </footer>
+  </section>
+
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+    <p class="hint">Click a panel to select it, drag to move its photo, scroll to zoom.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

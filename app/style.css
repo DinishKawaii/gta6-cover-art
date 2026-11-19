@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('./fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./fonts/Pacifico-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #12061e; color: #f4eefc; font: 15px/1.45 system-ui, -apple-system, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; }
+.controls { width: 360px; flex: none; display: flex; flex-direction: column; gap: 18px; }
+.controls h1 { margin: 0; font-family: Anton, sans-serif; font-size: 34px; line-height: 1.05; letter-spacing: 0.5px; text-transform: uppercase;
+  background: linear-gradient(90deg, #ffd319, #ff2975 55%, #8c1eff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.controls h1 span { display: block; font-size: 20px; color: #f4eefc; -webkit-text-fill-color: #f4eefc; }
+.tag { margin: 8px 0 0; color: #c9b8de; }
+.group { background: #1e0f31; border: 1px solid #3a2357; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.group h2 { margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffb347; }
+.group h2.sub { color: #c9b8de; margin-top: 4px; }
+.hint { margin: 0; font-size: 12.5px; color: #a894c4; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13.5px; }
+input[type=text] { font: inherit; padding: 9px 10px; border: 1px solid #4a2f6d; border-radius: 8px; background: #150a26; color: #fff; }
+input[type=text]:focus { outline: 2px solid #ff2975; outline-offset: 1px; }
+input[type=range] { width: 100%; accent-color: #ff2975; }
+.file-btn { display: block; text-align: center; padding: 11px; border-radius: 8px; cursor: pointer; font-weight: 700;
+  background: linear-gradient(90deg, #ff2975, #ff7a3c); color: #fff; }
+.file-btn input { display: none; }
+button { font: inherit; font-weight: 700; padding: 10px 12px; border: 0; border-radius: 8px; cursor: pointer; color: #fff; }
+button:disabled { opacity: 0.4; cursor: default; }
+.primary { background: #ff2975; flex: 1; }
+.primary.all { background: linear-gradient(90deg, #ff2975, #8c1eff); }
+.ghost { background: #2c1847; border: 1px solid #4a2f6d; flex: 1; }
+.ghost:hover { border-color: #ff2975; }
+.row { display: flex; gap: 8px; }
+.row.checks { flex-wrap: wrap; }
+.check { flex-direction: row; align-items: center; gap: 6px; font-weight: 500; }
+.check input { accent-color: #ff2975; width: 16px; height: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: #2c1847; border: 1px solid #4a2f6d; padding: 7px 10px; font-size: 13px; font-weight: 600; }
+.chip:hover { border-color: #ff7a3c; }
+.chip.on { background: #ff2975; border-color: #ff2975; }
+.chip .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 50%; vertical-align: -2px; margin-right: 6px; border: 1px solid rgba(255,255,255,0.5); }
+.panel-box { background: #150a26; border: 1px solid #3a2357; border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.panel-box p { margin: 0; font-size: 13.5px; }
+#status { margin: 0; font-size: 13px; color: #8fe3c0; min-height: 1.2em; }
+footer p { margin: 0; font-size: 12px; color: #8a76a8; }
+.preview { position: sticky; top: 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.preview canvas { width: min(72vh, 62vw); height: min(72vh, 62vw); box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); border-radius: 4px; cursor: grab; background: #150822; }
+.preview canvas:active { cursor: grabbing; }
+@media (max-width: 900px) {
+  .app { flex-direction: column-reverse; align-items: center; }
+  .controls { width: 100%; max-width: 560px; }
+  .preview { position: static; }
+  .preview canvas { width: min(92vw, 560px); height: min(92vw, 560px); }
+}
+/* Screenshot scenes */
+body.shot-cover { overflow: hidden; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover .preview { position: static; }
+body.shot-cover .preview .hint { display: none; }
+body.shot-cover canvas { width: 100vw; height: 100vh; box-shadow: none; border-radius: 0; }
